@@ -39,3 +39,8 @@ class Vectorize(luigi.Task):
                 corpus.append(fh.read())
             
         corpus, X_test, labels, y_test = ms.train_test_split(corpus, labels, test_size=.3)
+
+        if self.evaluate:
+            corpus, X_test, labels, y_test = ms.train_test_split(corpus, labels, test_size=.3)
+
+            
